@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,300;0,400;0,500;1,100&family=Bungee+Spice&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  background: url("../../../asset/images/backgroundImg.jpg") no-repeat center;
+  background-size: cover;
+  background-position: center;
+}
+
+.start-menu-container--show {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start-menu-container--hide {
+  display: none;
+}
+.start-menu-container__title-container {
+  min-height: 5rem;
+  min-width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin-bottom: 2rem;
+  background-color: rgb(243, 247, 247);
+  box-shadow: 8px 5px 16px -5px rgba(0, 0, 0, 0.71);
+  -webkit-box-shadow: 8px 5px 16px -5px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 8px 5px 16px -5px rgba(0, 0, 0, 0.71);
+  border-radius: 0.3125rem;
+}
+.start-menu-container__title {
+  font-family: "Bungee Spice", cursive;
+  color: azure;
+  font-size: 3rem;
+}
+
+.start-game-btn__btn {
+  padding: 1rem 3rem;
+  border: none;
+  color: white;
+  background-color: #EE9800;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 0.3125rem;
+  animation: pulsate 8s infinite 3s;
+  cursor: pointer;
+}
+
+@keyframes pulsate {
+  0% {
+    background-color: #EE9800;
+  }
+  100% {
+    background-color: #D33100;
+  }
+}
+.title-container {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Bungee Spice", cursive;
+  padding-block: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0.0625rem solid red;
+}
+.title-container__drink-name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  border-inline: 0.0625rem solid red;
+}
+.title-container__title {
+  font-size: 1.5rem;
+}
+.title-container__scores-container {
+  display: flex;
+  align-items: center;
+}
+.title-container__score-icon {
+  font-size: 1.5rem;
+}
+.title-container__score {
+  font-size: 1.5rem;
+}
+.title-container__menu-btn-container {
+  cursor: pointer;
+}
+
+.test-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.test-container__img-title {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 17rem;
+  padding-block: 0.5rem;
+  word-wrap: break-word;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.test-container__img-container {
+  height: 24.5rem;
+  width: 17rem;
+  margin-right: 2rem;
+}
+.test-container__img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.test-container__option-container, .no-pointer {
+  height: 27rem;
+  width: 78%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0.0625rem solid red;
+}
+.test-container__btn-container, .test-container__title-container {
+  display: flex;
+  justify-content: center;
+}
+.test-container__btn {
+  border: none;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  border-radius: 0.3125rem;
+  background-color: #EE9800;
+  font-size: 1.5rem;
+  animation: pulsate 8s infinite 3s;
+  cursor: pointer;
+}
+.test-container__title-container {
+  padding-block: 1rem;
+}
+.test-container__title {
+  font-family: "Bungee Spice", cursive;
+  font-size: 1.5rem;
+}
+.test-container__options-container {
+  padding: 0 1rem 0.5rem 2rem;
+}
+.test-container__div {
+  display: flex;
+  margin-block: 0.5rem;
+  padding-left: 1rem;
+  transition: 0.4s ease;
+}
+.test-container__div:hover {
+  background-color: #EE9800;
+  color: #fff;
+  box-shadow: 8px 5px 16px -5px rgba(0, 0, 0, 0.71);
+  -webkit-box-shadow: 8px 5px 16px -5px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 8px 5px 16px -5px rgba(0, 0, 0, 0.71);
+}
+.test-container__option-label {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  padding: 1rem;
+  font-size: 1.4rem;
+  height: 100%;
+  width: 100%;
+}
+
+.feedback-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0.0625rem solid red;
+  margin-inline: 2rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.retry-container {
+  text-align: center;
+}
+.retry-container__retry-msg, .retry-container__retry-msg--green, .retry-container__retry-msg--red {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0.9rem;
+}
+.retry-container__retry-msg--red {
+  color: red;
+}
+.retry-container__retry-msg--green {
+  color: darkgreen;
+}
+.retry-container__retry-btn, .retry-container__retry-btn--green, .retry-container__retry-btn--red {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.3125rem;
+}
+.retry-container__retry-btn--red {
+  background-color: red;
+  color: #fff;
+}
+.retry-container__retry-btn--green {
+  background-color: darkgreen;
+  color: #fff;
+}
+
+.no-pointer {
+  pointer-events: none;
+}/*# sourceMappingURL=stylesheet.css.map */

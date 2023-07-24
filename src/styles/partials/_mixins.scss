@@ -1,0 +1,15 @@
+@mixin transBg{
+    background-color: rgba(255,255,255,0.8);
+}
+
+@mixin borderRed{
+    border: 0.0625rem solid red;
+}
+
+@mixin font🎉{
+    font-family: 'Bungee Spice', cursive;
+}
+
+@mixin roboto{
+    font-family: 'Roboto', sans-serif;
+}

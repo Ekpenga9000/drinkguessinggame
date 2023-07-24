@@ -1,0 +1,237 @@
+@use "./typography" as *;
+@use "./mixins" as *;
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    overflow: hidden;
+}
+
+.app{
+    height: 100vh;
+    width:100vw;
+    // background-color: #aaaaaa;
+    background: url("../../../asset/images/backgroundImg.jpg") no-repeat center;
+    background-size: cover;
+    background-position: center;
+}
+
+.start-menu-container{
+    &--show{
+        height: 100%;
+        @include transBg;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    &--hide{
+        display: none;
+    }
+    &__title-container{
+        min-height: 5rem;
+        min-width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 2rem;
+        margin-bottom: 2rem;
+        background-color: rgb(243, 247, 247);
+        box-shadow: 8px 5px 16px -5px rgba(0,0,0,0.71);
+        -webkit-box-shadow: 8px 5px 16px -5px rgba(0,0,0,0.71);
+        -moz-box-shadow: 8px 5px 16px -5px rgba(0,0,0,0.71);
+        border-radius: 0.3125rem;
+    }
+    &__title{
+        @include font🎉;
+        color: azure;
+        font-size: 3rem;
+    }
+}
+
+.start-game-btn{
+    &__btn{
+        padding: 1rem 3rem;
+        border: none;
+        color: white;
+        background-color: #EE9800;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius:0.3125rem;
+        animation:pulsate 8s infinite 3s;
+        cursor: pointer;
+    }
+}
+
+
+@keyframes pulsate{
+    0%{
+        background-color: #EE9800;
+    }
+    100%{
+        background-color: #D33100;
+    }
+}
+
+.title-container{
+    display: flex;
+    justify-content: space-evenly;
+    @include font🎉;
+    padding-block: 1rem;
+    @include transBg;
+    @include borderRed;
+    &__drink-name-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        border-inline: 0.0625rem solid red;
+    }
+    &__title{
+        font-size: 1.5rem;
+    }
+    &__scores-container{
+        display: flex;
+        align-items: center;
+    }
+    &__score-icon{
+        font-size: 1.5rem;
+    }
+    &__score{
+        font-size: 1.5rem;
+    }
+    &__menu-btn-container{
+        cursor: pointer;
+    }
+}
+
+.test-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    &__img-title{
+        @include roboto;
+        text-align: center;
+        width: 17rem;
+        padding-block: 0.5rem;
+        word-wrap: break-word;
+        @include transBg;
+    }
+    &__img-container{
+        height: 24.5rem;
+        width: 17rem;
+        margin-right:2rem;
+    }
+    &__img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__option-container{
+        height: 27rem;
+        width: 78%;
+        @include transBg;
+        @include borderRed;
+    }
+    &__btn-container{
+        display: flex;
+        justify-content: center
+    }
+    &__btn{
+        border: none;
+        padding: 0.5rem 1.5rem;
+        color: white;
+        border-radius: 0.3125rem;
+        background-color: #EE9800;
+        font-size: 1.5rem;
+        animation:pulsate 8s infinite 3s;
+        cursor: pointer;
+       
+    }
+    &__title-container{
+        @extend .test-container__btn-container;
+        padding-block: 1rem;
+    }
+    &__title{
+        @include font🎉;
+        font-size: 1.5rem;
+    }
+    &__options-container{
+        padding:0 1rem 0.5rem 2rem;
+    }
+    &__div{
+        display: flex;
+        margin-block: 0.5rem;
+        padding-left: 1rem;
+        transition: 0.4s ease;
+        &:hover{
+            background-color: #EE9800;
+            color: #fff;
+            box-shadow: 8px 5px 16px -5px rgba(0,0,0,0.71);
+            -webkit-box-shadow: 8px 5px 16px -5px rgba(0,0,0,0.71);
+            -moz-box-shadow: 8px 5px 16px -5px rgba(0,0,0,0.71);
+        }
+    }
+    &__option-label{
+        @include roboto;
+        display: block;
+        padding: 1rem;
+        font-size: 1.4rem;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+.feedback-container{
+    @include transBg;
+    @include borderRed;
+    margin-inline: 2rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.retry-container{
+    text-align: center;
+    &__retry-msg{
+        @include roboto;
+        margin-bottom: 0.9rem;
+        &--red{
+            @extend .retry-container__retry-msg;
+            color: red;
+        }
+        &--green{
+            @extend .retry-container__retry-msg;
+            color: darkgreen;
+        }
+    }
+    &__retry-btn{
+        @include roboto;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 0.3125rem;
+        &--red{
+            @extend .retry-container__retry-btn;
+            background-color: red;
+            color: #fff;
+        }
+        &--green{
+            @extend .retry-container__retry-btn;
+            background-color: darkgreen;
+            color: #fff;
+        }
+    }
+
+}
+
+.no-pointer{
+    @extend .test-container__option-container;
+    pointer-events: none;
+}
